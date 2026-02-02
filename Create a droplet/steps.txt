@@ -1,0 +1,51 @@
+## How to Create a Free Tier Droplet on DigitalOcean
+
+Follow these detailed steps to create a free (or trial) tier droplet on DigitalOcean:
+
+### 1. Sign Up for a DigitalOcean Account
+1. Go to [https://www.digitalocean.com/](https://www.digitalocean.com/).
+2. Click **Sign Up** and register using your email, Google, or GitHub account.
+3. Verify your email address.
+4. Add a valid payment method (credit card or PayPal). DigitalOcean often provides a free trial credit for new users.
+
+### 2. Access the DigitalOcean Control Panel
+1. Log in to your DigitalOcean account.
+2. You will be redirected to the [DigitalOcean Control Panel](https://cloud.digitalocean.com/login).
+
+### 3. Create a New Droplet
+1. Click the **Create** button in the top right corner and select **Droplets**.
+2. Choose an operating system (e.g., Ubuntu 22.04 LTS is recommended for most users).
+
+### 4. Select a Plan
+1. Under **Choose a plan**, select the **Basic** plan.
+2. Pick the lowest-cost option (usually 1 vCPU, 512MB or 1GB RAM). This is covered by the free trial credit.
+
+### 5. Choose a Data Center Region
+1. Select a region closest to your users or yourself for best performance.
+
+### 6. Authentication
+1. Choose **Password** or **SSH Key** authentication.
+	- For password: Enter a strong password.
+	- For SSH key: Add your public SSH key (recommended for security).
+2. We will use SSH key for best practices and security     
+
+### 7. Final Configuration
+1. (Optional) Add backups, monitoring, or additional options as needed.
+2. Enter a hostname for your droplet (e.g., `my-first-droplet`).
+
+### 8. Create the Droplet
+1. Click **Create Droplet**.
+2. Wait a few moments for the droplet to be provisioned.
+
+### 9. Access Your Droplet
+1. Once created, you will see your droplet's IP address in the dashboard.
+2. Connect via SSH:
+	- If you chose password: `ssh root@<your_droplet_ip>` and enter your password.
+	- If you used an SSH key: `ssh root@<your_droplet_ip>` (no password needed).
+
+### 10. Manage and Monitor
+1. Use the DigitalOcean dashboard to monitor resource usage, reboot, or destroy your droplet as needed.
+2. Remember, the free trial is credit-based. Monitor your usage to avoid charges after the credit expires.
+
+---
+**Note:** DigitalOcean does not have a permanent free tier, but new users receive free credits to try the platform. Always check the latest offers and terms on the DigitalOcean website.
