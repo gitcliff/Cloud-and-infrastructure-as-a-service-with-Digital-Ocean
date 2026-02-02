@@ -1,0 +1,26 @@
+# What you'll learn: How to install Java for running Java applications  
+# Outcome: Installs OpenJDK 17 without GUI components (headless).  
+# Why this matters: Essential for running Java apps or servers on a Linux machine without desktop dependencies.  
+
+# ------------------------------  
+# 🧩 SECTION TITLE: Install OpenJDK 8 (Headless)  
+# ------------------------------  
+sudo apt install openjdk-17-jre-headless  
+# ✅ What it does: Downloads and installs OpenJDK 17 JRE (headless version) from the package repositories.  
+# 🧠 Why it matters: The "headless" version is lighter because it excludes GUI-related libraries, perfect for servers.  
+
+# ------------------------------  
+# 🔄 Equivalent PowerShell command (Windows with Chocolatey):  
+choco install openjdk17 
+# ✅ What it does: Installs OpenJDK 17 using Chocolatey on Windows.  
+# 🧠 Why it matters: Provides the Java Runtime for running Java-based apps on Windows.  
+
+# ------------------------------  
+# ✅ NOTES / GOTCHAS / TIPS  
+# ------------------------------  
+# - 🆚 `openjdk-17-jre` vs `openjdk-8-jre-headless`:  
+#   - `headless` skips GUI components—useful for servers.  
+#   - Regular `jre` includes GUI dependencies—needed if running desktop Java apps.  
+# - 💡 Verify installation with:  
+#   java -version  
+# - 🛡️ Always use `sudo` because installing packages requires admin rights.  
