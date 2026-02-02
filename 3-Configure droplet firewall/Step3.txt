@@ -1,0 +1,44 @@
+🧠 Why it matters:
+By default when a server is created on digital ocean its publically accessible on all ports and not secured by firewall at ll which is a bad security practise.
+
+1. Configure firewall using its configuration
+We edit and close off inbound sources access to the server and open outbound access for installaing server and packages needed
+
+2. Explicitly allow access to specifc ports 
+Here we close access to all ports and only allow specific ip address or range of ip addresses to access the sever on port 22 which is the default ssh port for connection 
+
+
+**After configuring the firewall then connect to the remote server via SSH** 
+
+# What you'll learn: How to start an SSH session with a remote host  
+# Outcome: Opens a secure terminal session on the server at 209.38.69.149  
+# Why this matters: SSH allows you to manage servers securely over the network.  
+
+# ------------------------------  
+# 🧩 SECTION TITLE: Connect to Remote Server via SSH  
+# ------------------------------  
+ssh root@209.38.69.127  
+# ✅ What it does: Initiates a secure SSH connection to the server with IP address 209.38.69.149 using the `root` account.  
+# 🧠 Why it matters: SSH (Secure Shell) is the standard way to administer Linux servers remotely.  
+
+# ------------------------------  
+# 🔄 Equivalent PowerShell command (Windows):  
+ssh root@209.38.69.149 
+# ✅ What it does: Same command works in PowerShell if OpenSSH is installed (Windows 10+ includes OpenSSH by default).  
+# 🧠 Why it matters: You don’t need to install PuTTY if using modern Windows; PowerShell supports `ssh` natively.  
+
+# ------------------------------  
+# ✅ NOTES / GOTCHAS / TIPS  
+# ------------------------------  
+# - 🛡️ Security Warning: Logging in as `root` over SSH is risky. Prefer using a regular user account with `sudo` privillages.  
+# - 🔑 If prompted for a password, enter the root user’s password for the server.  
+# - 💡 To use a private key instead of a password:  
+#   ssh -i ~/.ssh/id_rsa root@209.38.69.149  
+# - 👀 You can test the connection without logging in by adding `-v` for verbose output:  
+#   ssh -v root@209.38.69.127  
+# - 🧪 If connection fails, check:  
+#   - Is SSH installed on your local system? (`ssh -V`)  
+#   - Is port 22 open on the server firewall?  
+#   - Are you behind a firewall that blocks SSH?  
+
+
