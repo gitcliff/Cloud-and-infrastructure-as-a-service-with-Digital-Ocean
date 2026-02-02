@@ -1,0 +1,79 @@
+# 📦 SUMMARY  
+# These commands build a Java project using Gradle, copy the built jar to a remote server, list files, run the jar, and check running Java processes and open network ports.  
+# Language/Platform: Bash (Linux/macOS)  
+# What you'll learn: Building Java apps with Gradle, transferring files with SCP, running Java apps, and basic server diagnostics, deploying an application on a remote server.  
+# Outcome: Your Java app is built, copied to a remote server, started, and you verify its status and network bindings.  
+# Why this matters: These steps demonstrate a typical Java deployment workflow and server troubleshooting.  
+
+# ------------------------------  
+# 🧩 SECTION TITLE: Build Java Application  
+# ------------------------------  
+gradle build  
+# ✅ What it does: Compiles the Java project, runs tests, and packages the app into a jar file inside 'build/libs/'.  
+# 🧠 Why it matters: Produces the runnable Java archive needed for deployment.  
+
+# ------------------------------  
+# 🧩 SECTION TITLE: Copy Jar to Remote Server  
+# ------------------------------  
+scp build/libs/java-react-example.jar root@209.38.69.149:/root  
+# ✅ What it does: Securely copies the built jar file to the `/root` directory of the remote server at IP 209.38.69.149 using SCP (SSH).  
+# 🧠 Why it matters: Transfers the application so it can be run on the server.  
+
+# ------------------------------  
+# 🧩 SECTION TITLE: List Files in Current Directory  
+# ------------------------------  
+ls  
+# ✅ What it does: Lists files in the current directory to verify the presence of 'java-react-example.jar'.  
+# 🧠 Why it matters: Confirms the file is available before running it.  
+
+# ------------------------------  
+# 🧩 SECTION TITLE: Run Java Application  
+# ------------------------------  
+java -jar java-react-example.jar  
+# ✅ What it does: Starts the Java application contained in the jar file.  
+# 🧠 Why it matters: Runs your server or app so it begins serving requests or performing its function.  
+After runnign the application it will listen on port 7071 on the remote but since it not yet open , we wont be bale to access it via the browser on that port. So we added a custom TCP firewall rule 
+and open connection from all sources to make the application publically available from the browsers 
+
+# ------------------------------  
+# 🧩 SECTION TITLE: Check Running Java Processes  
+# ------------------------------  
+ps aux | grep java  
+# ✅ What it does: Lists all running processes and filters to show only those related to Java.  
+# 🧠 Why it matters: Verifies that the Java app is running and helps troubleshoot if it crashed or is missing.  
+
+# ------------------------------  
+# 🧩 SECTION TITLE: Check Open Network Ports  
+# ------------------------------  
+netstat -lpnt  
+# ✅ What it does: Shows listening TCP ports with their associated processes.  
+# 🧠 Why it matters: Confirms if your Java app is listening on the expected ports and helps diagnose network issues.  
+
+# ------------------------------  
+# 🔄 Equivalent PowerShell commands (Windows) and explanations:  
+# - Build (if Gradle installed):  
+#   gradle build  
+#   # Same as Linux: builds the project.  
+# - Copy file to remote (using scp in PowerShell or WinSCP GUI):  
+#   scp build/libs/java-react-example.jar root@209.38.69.149:/root  
+#   # Securely transfers file via SSH.  
+# - List files:  
+#   dir  
+#   # Lists files in current folder.  
+# - Run jar:  
+#   java -jar java-react-example.jar  
+#   # Runs the Java app.  
+# - Check Java processes:  
+#   Get-Process java  
+#   # Lists running Java processes.  
+# - Check open ports (PowerShell):  
+#   Get-NetTCPConnection -State Listen | Where-Object { $_.OwningProcess -eq (Get-Process java).Id }  
+#   # Shows ports listened to by Java processes.  
+
+# ------------------------------  
+# ✅ NOTES / GOTCHAS / TIPS  
+# ------------------------------  
+# - Make sure SSH access to the server is working before scp.  
+# - If java command is missing, check JAVA_HOME or PATH environment variables.  
+# - Use `nohup java -jar java-react-example.jar &` or a system service for running Java apps persistently.  
+# - Use `netstat` or `ss` to check ports; on some systems `netstat` may be deprecated.  
