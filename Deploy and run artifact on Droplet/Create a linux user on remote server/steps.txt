@@ -1,0 +1,63 @@
+# 📦 SUMMARY  
+# These commands create a new user named `cliff`, give them sudo privileges, set up SSH key authentication, and log in as that user via SSH.  
+# Language/Platform: Bash (Linux)  
+# What you'll learn: User management, SSH key setup, and secure remote login  
+# Outcome: A new user `cliff` with admin rights and SSH key access on the server  
+# Why this matters: Using a non-root user with sudo and SSH keys improves server security.  
+
+# ------------------------------  
+# 🧩 SECTION TITLE: Create User and Add to sudo Group  
+# ------------------------------  
+
+ adduser cliff  
+# ✅ What it does: Creates a new user named `cliff` and sets up their home directory and password.  
+# 🧠 Why it matters: Adds a separate user for safer server management than using root.  
+
+sudo usermod -aG sudo cliff  
+# ✅ What it does: Adds user `cliff` to the `sudo` group, granting administrative privileges but while still keeping them in their original group they where added in at creation.  
+# 🧠 Why it matters: Allows `cliff` to run commands with elevated administrative permissions using `sudo`.  
+
+# ------------------------------  
+# 🧩 SECTION TITLE: Switch to New User and Setup SSH Keys  
+# ------------------------------  
+su - cliff  
+# ✅ What it does: Switches to user `cliff` and loads their environment.  
+# 🧠 Why it matters: Operate as the new user to configure SSH access.  
+
+mkdir ~/.ssh  
+# ✅ What it does: Creates an `.ssh` directory in `cliff`'s home folder for SSH keys.  
+# 🧠 Why it matters: Required directory for storing authorized SSH keys securely.  
+
+chmod 700 ~/.ssh  
+# ✅ What it does: Sets permissions to allow only the user to read/write/execute `.ssh` directory.  
+# 🧠 Why it matters: Prevents unauthorized users from accessing SSH keys.  
+
+vim ~/.ssh/authorized_keys  
+# ✅ What it does: Opens a text editor to add your public SSH key for authentication to enable secure access.  
+# 🧠 Why it matters: Enables key-based SSH login, which is more secure than passwords.  
+
+chmod 600 ~/.ssh/authorized_keys  
+# ✅ What it does: Sets permissions so only the user can read/write the authorized_keys file.  
+# 🧠 Why it matters: Ensures SSH will accept the keys and prevent access issues.  
+
+# ------------------------------  
+# 🧩 SECTION TITLE: Login as New User via SSH  
+# ------------------------------  
+ssh cliff@209.38.69.149  
+# ✅ What it does: Starts an SSH session logging in as user `cliff` on the remote server.  
+# 🧠 Why it matters: Tests that the key-based login works for the new user.  
+
+# ------------------------------  
+# 🔄 Equivalent PowerShell (Windows) notes:  
+# - You can use `ssh cliff@209.38.69.149` directly in PowerShell if OpenSSH client is installed.  
+# - Editing remote files can be done with WinSCP or using PowerShell's `scp` and `ssh` commands combined.  
+
+# ------------------------------  
+# ✅ NOTES / GOTCHAS / TIPS  
+# ------------------------------  
+# - Always create a specific user to run/start the appliaction or start a service and never start an appliaction as a root user for security best practices, plus give the user only the permissions they need to start the application.
+# - Always use strong passwords when creating users, even if you plan to use SSH keys.  
+# - Ensure the public SSH key you add to `authorized_keys` matches your private key on your local machine.  
+# - Avoid logging in as `root` directly; using sudo with a normal user is safer.  
+# - If `vim` is not installed, use `nano` or `vi` to edit files.  
+
