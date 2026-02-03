@@ -1,15 +1,17 @@
-# Cloud-and-infrastructure-as-a-service-with-Digital-Ocean
+# Cloud and infrastructure as a service with Digital Ocean
 
-## 2 - Setup Server on DigitalOcean
+# 2 - Setup Server on DigitalOcean
 
 
-**📖 Summary**
+## 📖 Summary
 
 Worked on Lab 2 - **Setup Server on DigitalOcean**, focusing on **deploying and configuring a virtual server (Droplet)** for Java application deployment built with gradle.
 Tasks included creating SSH keys for secure access, configuring firewall rules, updating server packages,creating a linux user of the remote server with sude privillages and installing Java. This setup prepares the server for use in a scalable DevOps pipeline.
 
 
-**🛠️ Tools and technologies Used**
+
+
+### 🛠️ Tools and technologies Used
 
 
 **DigitalOcean Droplet:** ✨ Cloud virtual server for hosting and deploying applications.
@@ -28,7 +30,7 @@ Tasks included creating SSH keys for secure access, configuring firewall rules, 
 
 
 
-**🎯 Skills Gained**
+### 🎯 Skills Gained
 
 
 
@@ -41,7 +43,7 @@ Tasks included creating SSH keys for secure access, configuring firewall rules, 
 **Server Provisioning:** 🚀 Updated and configured a Linux server to prepare for application deployment.
 
 
-**⚠️ Challenges Faced**
+### ⚠️ Challenges Faced
 
 **SSH Authentication Errors:** 🛠️ Resolved by ensuring correct public key was added to Droplet during setup.
 
@@ -49,7 +51,7 @@ Tasks included creating SSH keys for secure access, configuring firewall rules, 
 **Firewall Blocking Access:** 🔄 Adjusted UFW rules to allow only specific IPs, balancing security and connectivity.
 
 
-**💡 Why It Matters**
+### 💡 Why It Matters
 
 This lab builds foundational skills for cloud server provisioning and security hardening—critical for any DevOps role. By preparing a secure and updated server environment, we establish a reliable platform for running Java-based applications and integrating into CI/CD pipelines. 🌐🚀
 
@@ -60,17 +62,17 @@ This lab builds foundational skills for cloud server provisioning and security h
 
 
 
-## 3 - Deploy and run application artifact on Droplet
+# 3 - Deploy and run application artifact on Droplet
 
 
-**📖 Summary**
+## 📖 Summary
 
 Worked on Labs 3 & 4, focusing on **deploying a Java application artifact to a DigitalOcean Droplet and creating a secure Linux user.**
 Tasks included building the Java project, securely transferring the JAR artifact to the server, running the application, verifying its operation, and setting up a non-root user with sudo privileges and SSH key access.
 This setup ensures secure, organized deployments and follows DevOps best practices by using least-privilege access and service isolation on the cloud server.
 
 
-**🛠️ Tools Used**
+### 🛠️ Tools Used
 
 
 
@@ -91,7 +93,7 @@ This setup ensures secure, organized deployments and follows DevOps best practic
 
 
 
-**🎯 Skills Gained**
+### 🎯 Skills Gained
 
 
 
@@ -106,7 +108,7 @@ This setup ensures secure, organized deployments and follows DevOps best practic
 
 
 
-**⚠️ Challenges Faced**
+### ⚠️ Challenges Faced
 
 
 
@@ -118,7 +120,7 @@ This setup ensures secure, organized deployments and follows DevOps best practic
 
 
 
-**💡 Why It Matters**
+### 💡 Why It Matters
 
 This lab reinforces secure and efficient deployment practices in a cloud environment, demonstrating how to run application artifacts safely and manage server users according to security best practices.
 Mastering these tasks is essential for maintaining operational security and reliable application delivery in DevOps workflows. 🚀🔐
